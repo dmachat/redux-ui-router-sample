@@ -1,0 +1,40 @@
+{
+  "name": "redux-ui-router-sample",
+  "version": "1.0.0",
+  "description": "A sample app using redux-ui-router",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmachat/redux-ui-router-sample.git"
+  },
+  "keywords": [
+    "redux",
+    "ui-router",
+    "redux-ui-router",
+    "angular",
+    "ngRedux"
+  ],
+  "author": "Drew Machat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmachat/redux-ui-router-sample/issues"
+  },
+  "homepage": "https://github.com/dmachat/redux-ui-router-sample#readme",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-ui-router": "^0.2.15",
+    "babel-loader": "^5.3.2",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^1.6.2",
+    "ng-redux": "^3.0.2",
+    "redux": "^3.0.2",
+    "redux-logger": "^2.0.3",
+    "redux-thunk": "^1.0.0",
+    "redux-ui-router": "^0.4.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  }
+}

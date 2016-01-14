@@ -1,0 +1,1 @@
+# redux-ui-router-sample
