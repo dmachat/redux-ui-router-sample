@@ -1,7 +1,6 @@
 export default function(app) {
   const RouterConfig = ($stateProvider) => {
     $stateProvider
-
       .state('index', {
         abstract: true,
         views: {
@@ -9,19 +8,14 @@ export default function(app) {
         },
       })
 
-      .state('index.start', { 
-        url: '/',
-        template: '<a ui-sref="home"><h1>Start</h1></a>',
-      })
-
       .state('index.home', {
-        url: '/home',
+        url: '/',
         template: '<home></home>',
       })
 
-      .state('index.about', {
-        url: '/about/:type',
-        template: '<about></about>',
+      .state('index.data', {
+        url: '/data',
+        template: '<data></data>',
       });
   }
   RouterConfig.$inject = ['$stateProvider'];

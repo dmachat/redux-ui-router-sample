@@ -1,5 +1,8 @@
-<div>{{ controller.name }}</div>
+<h3>Home</h3>
 
-<div>
-  HelloDirective:
+<p>A small sample app to demonstrate redux with ui-router and Angular 1.x. Use the Data page to change the state of the app.</p>
+
+<div ng-switch on="!!controller.data.length">
+  <h5 ng-switch-when="false">No data has been added</h5>
+  <h5 ng-switch-when="true">Summary: {{ controller.data | homeFilter }}</h5>
 </div>

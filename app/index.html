@@ -3,16 +3,25 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>redux-ui-router sample</title>
+
+  <style>
+    ul.nav {
+      padding-left: 0;
+    }
+    ul.nav li {
+      list-style: none;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body ng-app="app" ng-strict-di>
 
-<ul>
-  <li><a ui-sref="index.start">Start</a></li>
+<ul class="nav">
   <li><a ui-sref="index.home">Home</a></li>
-  <li><a ui-sref="index.about({type:'detail'})">About</a></li>
+  <li><a ui-sref="index.data">Data</a></li>
 </ul>
 
-<ui-view="main"></ui-view>
+<div ui-view="main"></div>
 
 </body>
 </html>

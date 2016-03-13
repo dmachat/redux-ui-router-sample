@@ -3,15 +3,15 @@ import ngRedux from 'ng-redux';
 import ngReduxUiRouter from 'redux-ui-router';
 import reduxConfig from './reduxConfig';
 
-import about from './components/about';
 import home from './components/home';
+import data from './components/data';
 
 const app = angular
   .module('app', [
     uiRouter,
     ngRedux,
     ngReduxUiRouter,
-    about,
+    data,
     home,
   ]);
 
@@ -19,7 +19,7 @@ const app = angular
 app.config(['$locationProvider', ($locationProvider) => {
 	$locationProvider.hashPrefix('!');
 	$locationProvider.html5Mode({
-		enabled: true,
+		enabled: false,
 		requireBase: false,
 	}); 
 }]) 
