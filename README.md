@@ -4,7 +4,7 @@ This app demonstrates a basic implementation of ui-router and redux action flow 
 
 ## How to use
 
-Run `webpack-dev-server --inline` to start the live reloading development app.
+Run `npm start` for a live reloading development app.
 
 ## Todo
 
