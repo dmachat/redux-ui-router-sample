@@ -8,6 +8,8 @@ Check out corresponding branches for `angular-1.4.x` or `angular-1.5.x` versions
 
 Run `npm start` for a live reloading development app.
 
+Use the chrome browser extension for [Redux devtools](https://github.com/zalmoxisus/redux-devtools-extension).
+
 ## Todo
 
 * [ ] Add time travel debugging instructions
