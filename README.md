@@ -1,6 +1,6 @@
 # redux-ui-router-sample
 
-This app demonstrates a basic implementation of ui-router and redux action flow with Angular 1.x. 
+This app demonstrates a basic implementation of ui-router and redux action flow with Angular 1.5.x component syntax.
 
 ## How to use
 
