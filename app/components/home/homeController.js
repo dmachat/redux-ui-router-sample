@@ -1,9 +1,7 @@
 import * as types from '../../actions';
 
-DataController.$inject = ['$scope', '$ngRedux'];
-export default function DataController($scope, $ngRedux) {
-  this.$ngRedux = $ngRedux;
-
+HomeController.$inject = ['$scope', '$ngRedux'];
+export default function HomeController($scope, $ngRedux) {
   const disconnect = $ngRedux.connect((state) => {
     return {
       data: state.data.items,

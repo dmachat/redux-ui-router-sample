@@ -1,4 +1,3 @@
-data.$inject = [];
 export default function data() {
   return {
     controller: 'DataController',
