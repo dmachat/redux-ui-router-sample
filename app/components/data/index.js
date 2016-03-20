@@ -1,12 +1,18 @@
-import dataController from './dataController';
-import dataDirective from './dataDirective';
+/**
+ * Data component
+ * This file returns an angular module for the data component.
+ */
+
+import DataController from './dataController';
+import template from './data.html';
 
 export default angular
 
   .module('app.data', [])
 
-  .controller('DataController', dataController)
-
-  .directive('data', dataDirective)
+  .component('data', {
+    template,
+    controller: DataController,
+  })
   
   .name;

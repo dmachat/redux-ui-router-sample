@@ -1,24 +1,31 @@
-import actionTrigger from '../../actions/data';
-import * as types from '../../actions';
+import actionTrigger from '../../actions';
+import * as types from '../../constants';
 
-DataController.$inject = ['$scope', '$ngRedux'];
-export default function DataController($scope, $ngRedux) {
-  this.$ngRedux = $ngRedux;
+export default class DataController {
+  /*@ngInject;*/
+  constructor($scope, $ngRedux) {
+    this.$ngRedux = $ngRedux;
 
-  const disconnect = $ngRedux.connect((state) => {
-    return {
-      data: state.data.items,
-    };
-  })(this);
+    // bind redux state to this component, which subsribes to updates like a
+    // one way data binding
+    const disconnect = $ngRedux.connect((state) => {
+      return {
+        data: state.data.items,
+      };
+    })(this);
 
-  $scope.$on('$destroy', disconnect);
-}
+    // remove the redux data binding when component is destroyed
+    $scope.$on('$destroy', disconnect);
+  }
 
-DataController.prototype.submit = function() {
-  this.$ngRedux.dispatch(actionTrigger(types.ADD_DATA, this.form));
-  this.form = {};
-}
+  // submit and reset the form by sending an ADD_DATA action
+  submit() {
+    this.$ngRedux.dispatch(actionTrigger(types.ADD_DATA, this.form));
+    this.form = {};
+  }
 
-DataController.prototype.remove = function(id) {
-  this.$ngRedux.dispatch(actionTrigger(types.REMOVE_DATA, id));
+  // remove an item from the list by sending a REMOVE_DATA action
+  remove(id) {
+    this.$ngRedux.dispatch(actionTrigger(types.REMOVE_DATA, id));
+  }
 }

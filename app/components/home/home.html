@@ -1,8 +1,8 @@
 <h3>Home</h3>
 
-<p>A small sample app to demonstrate redux with ui-router and Angular 1.4.x Use the Data page to change the state of the app.</p>
+<p>A small sample app to demonstrate redux with ui-router and Angular 1.5.x and component syntax. Use the Data page to change the state of the app.</p>
 
-<div ng-switch on="!!controller.data.length">
+<div ng-switch on="!!$ctrl.data.length">
   <h5 ng-switch-when="false">No data has been added</h5>
-  <h5 ng-switch-when="true">Summary: {{ controller.data | homeFilter }}</h5>
+  <h5 ng-switch-when="true">Summary: {{ $ctrl.data | homeFilter }}</h5>
 </div>

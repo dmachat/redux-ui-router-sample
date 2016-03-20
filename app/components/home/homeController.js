@@ -1,14 +1,17 @@
-import * as types from '../../actions';
+import * as types from '../../constants';
 
-DataController.$inject = ['$scope', '$ngRedux'];
-export default function DataController($scope, $ngRedux) {
-  this.$ngRedux = $ngRedux;
+export default class HomeController {
+  /*@ngInject;*/
+  constructor($scope, $ngRedux) {
+    // bind redux state to this component, which subsribes to updates like a
+    // one way data binding
+    const disconnect = $ngRedux.connect((state) => {
+      return {
+        data: state.data.items,
+      };
+    })(this);
 
-  const disconnect = $ngRedux.connect((state) => {
-    return {
-      data: state.data.items,
-    };
-  })(this);
-
-  $scope.$on('$destroy', disconnect);
+    // remove the redux data binding when component is destroyed
+    $scope.$on('$destroy', disconnect);
+  }
 }
