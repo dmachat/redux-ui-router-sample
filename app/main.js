@@ -2,6 +2,8 @@
 import uiRouter from 'angular-ui-router';
 import ngRedux from 'ng-redux';
 import ngReduxUiRouter from 'redux-ui-router';
+
+// Import config for libraries
 import reduxConfig from './reduxConfig';
 import routeConfig from './routeConfig';
 
@@ -21,11 +23,11 @@ const app = angular
 
 // Enable HTML5 mode for routes
 app.config(['$locationProvider', ($locationProvider) => {
-	$locationProvider.hashPrefix('!');
-	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false,
-	}); 
+  $locationProvider.hashPrefix('!');
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false,
+  }); 
 }]) 
 
 // Load config for ui-router
