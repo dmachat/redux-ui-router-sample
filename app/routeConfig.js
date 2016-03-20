@@ -1,3 +1,6 @@
+/**
+ * Add a few basic routes to ui-router for our components
+ */
 export default function(app) {
   RouterConfig.$inject = ['$stateProvider'];
   function RouterConfig($stateProvider) {

@@ -1,7 +1,8 @@
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval',
   entry: {
     app: [
       'angular',
@@ -9,19 +10,17 @@ module.exports = {
     ],
   },
   output: {
-    filename: '[name].bundle.js',
-    path: './build',
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/static/',
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel', include: path.resolve('app') },
+      { test: /\.js$/, loader: 'babel', include: path.join(__dirname, 'app') },
       { test: /\.html$/, loader: 'html' },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('app', 'index.html'),
-      inject: 'body',
-    }),
-  ],
 };

@@ -1,3 +1,8 @@
+/**
+ * Data component
+ * This file returns an angular module for the data component.
+ */
+
 import DataController from './dataController';
 import template from './data.html';
 

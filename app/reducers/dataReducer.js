@@ -1,4 +1,19 @@
-import * as types from '../actions';
+/**
+ * Reducers update a specific prop in the application state, by operating
+ * after the action which describes what to change.
+ * To add a new action, add it to the switch statement in the dataReducer function
+ *
+ * @example
+ * case NEW_ACTION_CONSTANT:
+ *   return assign({}, state, {
+ *     stateVariable: action.var,
+ *   });
+ *
+ * To add a new reducer, add another file like this to the reducers folder, and
+ * add it in rootReducer.js.
+ */
+
+import * as types from '../constants';
 
 // Set up an initial state to hold data. Use count to assign ids so we can
 // remove items from the collection

@@ -1,16 +1,19 @@
-import reducers from './reducers';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
+/**
+ * Create the store with middlewares:
+ *
+ * redux-thunk: which allows us to do asyncronous things in the actions.
+ * ngUiRouter: intercepts route change methods from ui-router.
+ * devToolsExtension: use the chrome browser extension
+ */
 
-const logger = createLogger({
-  level: 'info',
-  collapsed: true,
-});
+import reducers from './reducers/rootReducer';
+import thunk from 'redux-thunk';
 
 store.$inject = ['$ngReduxProvider'];
 export default function store($ngReduxProvider) {
   $ngReduxProvider.createStoreWith(
     reducers,
-    ['ngUiRouterMiddleware', thunk, logger]
+    ['ngUiRouterMiddleware', thunk],
+    [window.devToolsExtension ? window.devToolsExtension() : f => f]
   );
 }
