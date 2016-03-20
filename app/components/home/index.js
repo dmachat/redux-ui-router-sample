@@ -1,3 +1,8 @@
+/**
+ * Home component
+ * This file returns an angular module for the home directive.
+ */
+
 import homeDirective from './homeDirective';
 import HomeController from './homeController';
 import homeFilter from './homeFilter';

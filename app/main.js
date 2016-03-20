@@ -1,11 +1,17 @@
+// Import third party libraries
 import uiRouter from 'angular-ui-router';
 import ngRedux from 'ng-redux';
 import ngReduxUiRouter from 'redux-ui-router';
-import reduxConfig from './reduxConfig';
 
+// Import config for libraries
+import reduxConfig from './reduxConfig';
+import routeConfig from './routeConfig';
+
+// Import components
 import home from './components/home';
 import data from './components/data';
 
+// This is our main angular application with dependencies
 const app = angular
   .module('app', [
     uiRouter,
@@ -19,13 +25,15 @@ const app = angular
 app.config(['$locationProvider', ($locationProvider) => {
 	$locationProvider.hashPrefix('!');
 	$locationProvider.html5Mode({
-		enabled: false,
+		enabled: true,
 		requireBase: false,
 	}); 
 }]) 
 
-app.config(require('./routeConfig')(app));
+// Load config for ui-router
+app.config(routeConfig(app));
 
+// Load Redux config
 app.config(reduxConfig);
 
 export default app;
