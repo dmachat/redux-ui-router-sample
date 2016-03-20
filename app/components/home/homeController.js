@@ -1,14 +1,14 @@
 import * as types from '../../actions';
 
-DataController.$inject = ['$scope', '$ngRedux'];
-export default function DataController($scope, $ngRedux) {
-  this.$ngRedux = $ngRedux;
+export default class HomeController {
+  /*@ngInject;*/
+  constructor($scope, $ngRedux) {
+    const disconnect = $ngRedux.connect((state) => {
+      return {
+        data: state.data.items,
+      };
+    })(this);
 
-  const disconnect = $ngRedux.connect((state) => {
-    return {
-      data: state.data.items,
-    };
-  })(this);
-
-  $scope.$on('$destroy', disconnect);
+    $scope.$on('$destroy', disconnect);
+  }
 }

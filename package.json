@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/dmachat/redux-ui-router-sample#readme",
   "dependencies": {
-    "angular": "1.4.9",
+    "angular": "1.5.2",
     "angular-ui-router": "0.2.18",
     "babel-loader": "5.4.0",
     "html-loader": "0.4.3",

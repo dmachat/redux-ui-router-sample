@@ -1,5 +1,6 @@
 export default function(app) {
-  const RouterConfig = ($stateProvider) => {
+  RouterConfig.$inject = ['$stateProvider'];
+  function RouterConfig($stateProvider) {
     $stateProvider
       .state('index', {
         abstract: true,
@@ -18,6 +19,5 @@ export default function(app) {
         template: '<data></data>',
       });
   }
-  RouterConfig.$inject = ['$stateProvider'];
   return RouterConfig;
 }

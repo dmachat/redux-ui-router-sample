@@ -1,15 +1,15 @@
-<div>{{ controller.name }}</div>
+<div>{{ $ctrl.name }}</div>
 
-<form ng-submit="controller.submit()">
-  <input type="text" ng-model="controller.form.label" placeholder="Data label"></input>
-  <input type="number" ng-model="controller.form.value" placeholder="Data"></input>
+<form ng-submit="$ctrl.submit()">
+  <input type="text" ng-model="$ctrl.form.label" placeholder="Data label"></input>
+  <input type="number" ng-model="$ctrl.form.value" placeholder="Data"></input>
   <input type="submit" value="Add Data Item"></input>
 </form>
 
 <h5>Data List:</h5>
 <ul>
-  <li ng-repeat="item in controller.data">
+  <li ng-repeat="item in $ctrl.data">
     {{ item.label }} - {{ item.value }}
-    <a href ng-click="controller.remove(item.id)">remove</a>
+    <a href ng-click="$ctrl.remove(item.id)">remove</a>
   </li>
 </ul>

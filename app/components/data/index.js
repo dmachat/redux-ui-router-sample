@@ -1,12 +1,13 @@
-import dataController from './dataController';
-import dataDirective from './dataDirective';
+import DataController from './dataController';
+import template from './data.html';
 
 export default angular
 
   .module('app.data', [])
 
-  .controller('DataController', dataController)
-
-  .directive('data', dataDirective)
+  .component('data', {
+    template,
+    controller: DataController,
+  })
   
   .name;

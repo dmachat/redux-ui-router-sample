@@ -1,14 +1,15 @@
-import homeDirective from './homeDirective';
 import homeController from './homeController';
 import homeFilter from './homeFilter';
+import template from './home.html';
 
 export default angular
 
   .module('app.home', [])
 
-  .controller('HomeController', homeController)
-
-  .directive('home', homeDirective)
+  .component('home', {
+    template,
+    controller: homeController,
+  })
 
   .filter('homeFilter', homeFilter)
   
